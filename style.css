@@ -1,12 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=League+Spartan:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     line-height: 1.5;
+    font-family: "Gentium Book Plus", serif;
 }
 
 header {
     padding: 20px;
     width: 100vw;
+    height: 200px;
     background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.logo {
+    width: 7vw;
+}
+
+.header-text {
+    font-size: 14pt;
+}
+
+.library-wrapper {
+    padding-top: 200px;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.text {
+    padding: 20px;
+    font-family: 'League Spartan';
+    font-size: 18pt;
+    font-weight: 550;
+}
+
+.library {
+    border: 1px solid black;
 }
