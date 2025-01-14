@@ -114,5 +114,11 @@ header {
 
 .library {
     border: 1px solid black;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
 }
 
+.book {
+    border: 1px solid black;
+}
