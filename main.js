@@ -8,8 +8,6 @@ const bookForm = document.querySelector("#book-form");
 //let bookList = [];
 let bookList = [];
 
-
-
 const getFromLocalStorage = () => {
     const reference = localStorage.getItem('books');
 
