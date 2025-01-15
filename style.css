@@ -60,6 +60,11 @@
     background-color: rgba(0, 0, 0, 0.125);
 }
 
+.button:active {
+    background-color: white;
+    color: rgb(113, 113, 113);
+}
+
 header {
     padding: 20px;
     width: 100vw;
