@@ -64,7 +64,7 @@ addBookButton.addEventListener("click", () => {
         condition: bookForm.condition.value,
         cover: bookForm.cover.value
     }
-    bookList.push(book);
+    bookList.unshift(book);
     localStorage.setItem('books', JSON.stringify(bookList));
     displayBooks();
     console.log(bookList);
