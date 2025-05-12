@@ -26,7 +26,24 @@ const displayBooks = () => {
     let books = JSON.parse(localStorage.getItem('books'));
     let booksHTML = "";
     booksHTML += books.map((book) => {
-        return `
+        if(book.userMade) {
+            return `
+                <div class="book">
+                    <div class="book-info">
+                        <h1 class="name">${book.name} (${book.year})</h1>
+                        <h3 class="writer">${book.writer}</h3>
+                        <p class="isbn">ISBN: ${book.isbn}</p>
+                        <p class="condition">Condition: ${book.condition}</p>
+                    </div>
+                    <div class="flex">
+                    <button class="button">Rent Now!</button>
+                    <button class="button remove">Remove</button>
+                    </div>
+                </div>
+            `
+        }
+        else {
+            return `
             <div class="book">
                 <div class="book-info">
                     <h1 class="name">${book.name} (${book.year})</h1>
@@ -37,13 +54,18 @@ const displayBooks = () => {
                 <button class="button">Rent Now!</button>
             </div>
         `
+        }
     }).join('');
     libraryContainer.innerHTML = booksHTML;
+    document.getElementsByClassName("remove").forEach(button => {
+        button.addEventListener("click", () => {
+            const removeBook = (e) => {
+                console.log(e);
+            }
+        })
 }
 
-const removeBook = (e) => {
-    console.log(e);
-}
+
 
 getFromLocalStorage();
 
@@ -62,7 +84,8 @@ addBookButton.addEventListener("click", () => {
         isbn: bookForm.isbn.value,
         year: bookForm.year.value,
         condition: bookForm.condition.value,
-        cover: bookForm.cover.value
+        cover: bookForm.cover.value,
+        userMade: true
     }
     bookList.unshift(book);
     localStorage.setItem('books', JSON.stringify(bookList));
