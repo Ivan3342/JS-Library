@@ -62,7 +62,7 @@ const displayBooks = () => {
             const removeBook = (e) => {
                 console.log(e);
             }
-        })
+        })});
 }
 
 
