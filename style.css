@@ -14,6 +14,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -25,6 +26,7 @@ header {
     height: 70px;
     font-family: var(--primary-font);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
     & .nav-logo {
         & img {
             width: 60px;
@@ -32,6 +34,7 @@ header {
             object-fit: cover;
         }
     }
+
     & .nav-links {
         display: flex;
         flex-direction: row;
@@ -39,6 +42,7 @@ header {
         align-items: center;
         gap: 10px;
     }
+
     & .nav-links a {
         text-decoration: none;
         color: black;
@@ -50,12 +54,14 @@ header {
         border-bottom: 2px solid transparent;
 
     }
+
     & .nav-links a:hover {
         background-color: rgba(0, 0, 0, 0.1);
         border-bottom: 2px solid var(--light-caramel);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transform: translate(0, -2px);
     }
+
     & .nav-links a:active {
         background-color: var(--light-caramel);
         color: var(--black);
@@ -66,52 +72,183 @@ header {
 
 main {
     font-family: var(--secondary-font);
+    h2 {
+        width: fit-content;
+        border-bottom: 8px dotted var(--light-caramel);
+    }
     & .hero {
         background-image: url(assets/bookstore.png);
         background-repeat: no-repeat;
         background-position: 0 -100px;
         background-size: cover;
+
+        & .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            height: 80vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+
+        & .hero-content h1 {
+            font-family: var(--primary-font);
+            font-size: 6rem;
+            max-width: 1300px;
+            text-transform: uppercase;
+        }
+
+        & .hero-content p {
+            font-size: 1rem;
+            max-width: 1200px;
+        }
+
+        & .btn {
+            font-family: var(--primary-font);
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--caramel);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        & .btn:hover {
+            background-color: var(--light-caramel);
+            transform: translateY(-2px);
+        }
+
+        & .btn:active {
+            background-color: var(--dark-brown);
+            transform: translateY(2px);
+        }
     }
-    & .hero-content {
+
+    & .about {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        height: 80vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(20px);
-        color: var(--white);
-        text-align: center;
-        padding: 20px;
+        margin: 50px 0;
+        background-color: var(--white);
+        color: var(--black);
+
+        & .about-content {
+            max-width: 1200px;
+            text-align: justify;
+        }
+
+        & .about-content h2 {
+            font-family: var(--primary-font);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        & .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        & iframe {
+            margin: 20px 0;
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            border-radius: 8px;
+        }
     }
-    & .hero-content h1 {
-        font-family: var(--primary-font);
-        font-size: 6rem;
-        max-width: 1300px;
-        text-transform: uppercase;
+
+    & .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0;
+        background-color: var(--white);
+        color: var(--black);
+
+        & .contact-content {
+            max-width: 1200px;
+            text-align: justify;
+        }
+
+        & .contact-content h2 {
+            font-family: var(--primary-font);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        & .contact-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        & .contact-content a {
+            color: var(--caramel);
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        & .contact-content a:hover {
+            color: var(--dark-brown);
+        }
     }
-    & .hero-content p {
-        font-size: 1rem;
+}
+
+footer {
+    font-family: var(--primary-font);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-brown);
+    color: var(--white);
+    padding: 20px 0;
+
+    & .footer-content {
         max-width: 1200px;
+        text-align: center;
     }
-    & .btn {
-        font-family: var(--primary-font);
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: var(--caramel);
-        color: var(--white);
+
+    & .footer-content p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    & .footer-content a {
+        color: var(--light-caramel);
         text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    & .btn:hover {
-        background-color: var(--light-caramel);
-        transform: translateY(-2px);
+
+    & .footer-content img {
+        transition: 0.2s ease;
+        margin: 8px;
     }
-    & .btn:active {
-        background-color: var(--dark-brown);
-        transform: translateY(2px);
+
+    & .footer-content a:hover {
+        color: var(--white);
+    }
+
+    & .icon {
+        width: 48px;
+        height: 48px;
+        vertical-align: middle;
+        fill: var(--light-caramel);
+        transition: fill 0.2s;
+        background-color: var(--white);
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
