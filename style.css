@@ -72,10 +72,12 @@ header {
 
 main {
     font-family: var(--secondary-font);
+
     h2 {
         width: fit-content;
         border-bottom: 8px dotted var(--light-caramel);
     }
+
     & .hero {
         background-image: url(assets/bookstore.png);
         background-repeat: no-repeat;
@@ -228,6 +230,7 @@ main {
             line-height: 1.6;
             margin-bottom: 20px;
         }
+
         .gallery-items {
             display: flex;
             flex-direction: row;
@@ -251,18 +254,49 @@ main {
             font-size: 30px;
             height: 200px;
         }
+
         & button:hover {
             background-color: var(--light-caramel);
             transform: translateY(-2px);
         }
+
         & button:active {
             background-color: var(--dark-brown);
             transform: translateY(2px);
         }
+
         & #gallery-image {
             width: 1000px;
             height: 900px;
             object-fit: cover;
+        }
+
+    }
+
+    & .collection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0;
+        background-color: var(--white);
+        color: var(--black);
+
+        & .collection-content {
+            max-width: 1200px;
+            text-align: justify;
+        }
+
+        & .collection-content h2 {
+            font-family: var(--primary-font);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        & .collection-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
     }
 }
@@ -314,4 +348,5 @@ footer {
             transform: scale(1.1);
         }
     }
+
 }
