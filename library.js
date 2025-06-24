@@ -8,7 +8,7 @@ class Book {
     }
     getDetailsHTML = () => {
         return `
-                <h2 class="detail-title">${this.title} (${this.year}) - ${this.author}</h2>
+                <h2 class="detail-title">${this.title} - ${this.author} (${this.year})</h2>
                 <div class="book-info hidden">
                     <p><strong>Author:</strong> ${this.author}</p>
                     <p><strong>Year:</strong> ${this.year}</p>
