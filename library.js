@@ -8,8 +8,7 @@ class Book {
     }
     getDetailsHTML = () => {
         return `
-            <div class="book-details">
-                <h2>${this.title} (${this.year}) - ${this.author}</h2>
+                <h2 class="detail-title">${this.title} (${this.year}) - ${this.author}</h2>
                 <div class="book-info hidden">
                     <p><strong>Author:</strong> ${this.author}</p>
                     <p><strong>Year:</strong> ${this.year}</p>
@@ -17,7 +16,6 @@ class Book {
                     <p><strong>ISBN:</strong> ${this.isbn}</p>
                 </div>
                 <button class="toggle-details">Toggle Details</button>
-            </div>
         `;
     }
 }
@@ -34,13 +32,16 @@ const renderBooks = () => {
         bookElement.innerHTML = book.getDetailsHTML();
         collection.appendChild(bookElement);
     });
+    document.querySelectorAll(".toggle-details").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.target.previousElementSibling.classList.toggle("hidden");
+        })
+    })
 }
 
 
 const fetchBooks = async () => {
-        const res = await fetch("books.json");
-        const data = await res.json();
-        const response = data.content;
+        const response = await fetch("books.json").then(res => res.json()).then(data => data.content);
         response.forEach(bookData => {
             const newBook = new Book(
                 bookData.title,

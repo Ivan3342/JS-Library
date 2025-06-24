@@ -17,6 +17,10 @@
     scroll-behavior: smooth;
 }
 
+.hidden {
+    display: none;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -69,6 +73,7 @@ header {
         transform: translate(0, 2px);
     }
 }
+
 
 main {
     font-family: var(--secondary-font);
@@ -275,8 +280,8 @@ main {
 
     & .collection {
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        align-items: center;
+        grid-auto-rows: min-content;
+        align-items: start;
         justify-items: center;
         margin: 50px 0;
         background-color: var(--white);
@@ -287,7 +292,7 @@ main {
             text-align: justify;
         }
 
-        & .collection-content h2 {
+        & .collection-content h2:first-of-type {
             font-family: var(--primary-font);
             font-size: 3rem;
             margin-bottom: 20px;
@@ -300,6 +305,7 @@ main {
         }
     }
 }
+
 
 footer {
     font-family: var(--primary-font);
@@ -349,3 +355,36 @@ footer {
         }
     }
 }
+
+.book-item {
+        background-color: rgb(228, 228, 228);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin: 10px;
+        padding: 30px;
+        border-radius: 8px;
+
+        & h2 {
+            font-size: 2rem !important;
+            border-bottom: none;
+        }
+        & .toggle-details {
+            padding: 10px 20px;
+            background-color: var(--light-caramel);
+            border: none;
+            border-radius: 5px;
+            font-family: var(--primary-font);
+            font-size: 1rem;
+            font-weight: 700;
+            transition: 0.125s ease-in-out;
+        }
+        & .toggle-details:hover {
+            cursor: pointer;
+            background-color: var(--dark-brown);
+            color: white;
+            box-shadow: 0px 2px 4px var(--black);
+        }
+        
+    }
