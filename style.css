@@ -309,7 +309,10 @@ main {
 
         & #collection-items {
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            justify-items: start;
+            align-items: start;
         }
 
     }
@@ -375,6 +378,7 @@ footer {
     padding: 30px;
     border-radius: 8px;
     min-width: 300px;
+    min-height: 250px;
 
     & h2 {
         font-size: 2rem !important;
