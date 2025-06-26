@@ -274,6 +274,7 @@ main {
             width: 1000px;
             height: 900px;
             object-fit: cover;
+            border-radius: 8px;
         }
 
     }
@@ -405,4 +406,26 @@ footer {
         box-shadow: 0px 2px 4px var(--black);
     }
 
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1024px) {
+    .hero {
+        & .hero-content h1{
+            font-size: 7vw !important;
+        }
+    }
+
+    .main-section {
+        width: 80vw;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .gallery-content {
+        & img {
+            width: 640px !important;
+            height: 500px !important;
+        }
+    }
 }
